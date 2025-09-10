@@ -1,0 +1,285 @@
+html {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0f1424ff;
+  color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 2rem;
+  max-width: 90rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1c1f4aff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.profile__info {
+  background-color: #5847ebff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  border-radius: 1rem;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.profile__info:hover {
+  background-color: #7536d3ff;
+  transform: scale(1.02);
+}
+
+.profile__info img:hover {
+  transform: scale(1.05);
+}
+
+.profile__info p {
+  color: #bdc1ff;
+  font-size: 1rem;
+}
+
+.profile__info h1 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.profile__info img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.timeframes {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.3rem;
+}
+
+.timeframes button {
+  background: none;
+  border: none;
+  color: #bdc1ff;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.timeframes button:hover,
+.timeframes button.active {
+  color: white;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 1.5rem;
+  cursor: pointer;
+  width: 20rem;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card__bg {
+  height: 5rem;
+  background-repeat: no-repeat;
+  background-position: top right 1rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.card__content {
+  position: relative;
+  background-color: #1c1f4aff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-top: -2rem;
+  transition: 0.2s ease;
+}
+
+.card__content:hover {
+  background-color: #6f76c8ff;
+}
+
+.card__title {
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+}
+
+.card__dots {
+  position: absolute;
+  left: 85%;
+  bottom: 75%;
+}
+
+.card__previous {
+  font-size: 1rem;
+  color: #bdc1ffff;
+}
+
+.card__current {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.work .card__bg {
+  background: #ff8c66ff url(images/icon-work.svg) no-repeat top -1rem right 2rem;
+  background-size: 5rem;
+}
+
+.play .card__bg {
+  background: #56c2e6ff url(images/icon-play.svg) no-repeat top right 2rem;
+  background-size: 5rem;
+}
+
+.study .card__bg {
+  background: #ff5c7cff url(images/icon-study.svg) no-repeat top -1rem right 2rem;
+  background-size: 6rem;
+}
+
+.exercise .card__bg {
+  background: #4acf81ff url(images/icon-exercise.svg) no-repeat top right 2rem;
+  background-size: 5rem;
+}
+
+.social .card__bg {
+  background: #7536d3ff url(images/icon-social.svg) no-repeat top -1rem right 2rem;
+  background-size: 4.5rem;
+}
+
+.self-care .card__bg {
+  background: #f1c65bff url(images/icon-self-care.svg) no-repeat top -1rem right
+    2rem;
+  background-size: 5rem;
+}
+
+@media (max-width: 76.8rem) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    min-width: none;
+    width: 90%;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .timeframes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .timeframes button {
+    flex: 1;
+    text-align: center;
+  }
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: none;
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card__dots {
+    left: 90%;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card__content:hover {
+    background-color: #1c1f4aff;
+  }
+
+  .profile__info img:hover {
+    transform: none;
+  }
+
+  .profile__info:hover {
+    transform: none;
+    background-color: #5847ebff;
+  }
+}
+
+@media (max-width: 40rem) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card__dots {
+    left: 90%;
+  }
+}
